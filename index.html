@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infografía SIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --blue: #1a3a6b;
+    --gold: #e8a020;
+    --gold-light: #f5c842;
+    --red: #c0392b;
+    --white: #f5f0e8;
+    --gray: #8a8a8a;
+    --light: #d4cfc5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a1a;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .page {
+    width: 900px;
+    background: var(--navy);
+    border: 1px solid rgba(232,160,32,0.2);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ── PAGE 1 ── */
+  .p1-header {
+    background: var(--blue);
+    padding: 60px 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .p1-header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border: 60px solid rgba(232,160,32,0.12);
+    border-radius: 50%;
+  }
+  .p1-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40%;
+    width: 180px; height: 180px;
+    border: 40px solid rgba(232,160,32,0.07);
+    border-radius: 50%;
+  }
+  .p1-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .p1-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    line-height: 0.9;
+    color: var(--white);
+    letter-spacing: 2px;
+  }
+  .p1-title span { color: var(--gold); }
+  .p1-subtitle {
+    font-size: 15px;
+    color: var(--light);
+    margin-top: 20px;
+    max-width: 500px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .p1-banner {
+    background: var(--gold);
+    padding: 16px 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .p1-banner-icon { font-size: 28px; }
+  .p1-banner-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--navy);
+    letter-spacing: 1px;
+  }
+  .p1-banner-sub {
+    font-size: 12px;
+    color: rgba(10,22,40,0.7);
+    margin-top: 2px;
+  }
+
+  .p1-cobertura {
+    padding: 50px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .big-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 110px;
+    line-height: 0.85;
+    color: var(--white);
+  }
+  .big-number span {
+    font-size: 40px;
+    color: var(--gold);
+    vertical-align: super;
+  }
+  .cobertura-desc {
+    font-size: 14px;
+    color: var(--light);
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+  .map-placeholder {
+    background: var(--blue);
+    border: 1px solid rgba(232,160,32,0.15);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+  }
+  .map-icon { font-size: 64px; margin-bottom: 12px; }
+  .map-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .map-tag {
+    background: rgba(232,160,32,0.12);
+    border: 1px solid rgba(232,160,32,0.3);
+    color: var(--gold-light);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(232,160,32,0.3), transparent);
+    margin: 0 60px;
+  }
+
+  /* ── PAGE 2 ── */
+  .p2-header {
+    padding: 40px 60px 30px;
+    border-bottom: 1px solid rgba(232,160,32,0.15);
+  }
+  .p2-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--white);
+    letter-spacing: 2px;
+  }
+  .p2-title span { color: var(--gold); }
+
+  .sanctions-grid {
+    padding: 40px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .sanction-card {
+    background: var(--blue);
+    border: 1px solid rgba(232,160,32,0.1);
+    border-left: 4px solid var(--gold);
+    padding: 24px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .sanction-card.red { border-left-color: var(--red); }
+  .sanction-card.green { border-left-color: #27ae60; }
+  .sanction-card.purple { border-left-color: #8e44ad; }
+
+  .card-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+  .card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--light);
+    line-height: 1.6;
+  }
+  .card-amount {
+    margin-top: 12px;
+    display: inline-block;
+    background: rgba(232,160,32,0.12);
+    border: 1px solid rgba(232,160,32,0.3);
+    color: var(--gold-light);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .card-amount.red-badge {
+    background: rgba(192,57,43,0.15);
+    border-color: rgba(192,57,43,0.4);
+    color: #e74c3c;
+  }
+
+  /* ── PAGE 3 ── */
+  .p3-header {
+    padding: 40px 60px 30px;
+    border-bottom: 1px solid rgba(232,160,32,0.15);
+  }
+
+  .scale-visual {
+    padding: 40px 60px;
+  }
+  .scale-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .scale-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .scale-label {
+    font-size: 12px;
+    color: var(--light);
+    width: 160px;
+    flex-shrink: 0;
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+  }
+  .scale-bar-wrap {
+    flex: 1;
+    height: 36px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .scale-bar {
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: var(--navy);
+  }
+
+  .who-section {
+    padding: 20px 60px 50px;
+  }
+  .who-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .who-title span { color: var(--gold); }
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .who-card {
+    background: var(--blue);
+    border: 1px solid rgba(232,160,32,0.1);
+    padding: 20px 16px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .who-emoji { font-size: 32px; margin-bottom: 8px; }
+  .who-name {
+    font-size: 12px;
+    color: var(--light);
+    line-height: 1.5;
+  }
+
+  /* ── PAGE 4 ── */
+  .p4-flow {
+    padding: 40px 60px 50px;
+  }
+  .flow-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .flow-title span { color: var(--gold); }
+  .flow-sub {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 40px;
+  }
+
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .flow-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    position: relative;
+  }
+  .flow-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    width: 2px;
+    height: calc(100% + 0px);
+    background: rgba(232,160,32,0.2);
+  }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .step-content {
+    background: var(--blue);
+    border: 1px solid rgba(232,160,32,0.1);
+    padding: 20px 24px;
+    flex: 1;
+    margin-bottom: 16px;
+  }
+  .step-head {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+  .step-body {
+    font-size: 13px;
+    color: var(--light);
+    line-height: 1.6;
+  }
+
+  .footer-strip {
+    background: var(--gold);
+    padding: 14px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--navy);
+    letter-spacing: 2px;
+  }
+  .footer-page {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(10,22,40,0.6);
+  }
+
+  .cases-section {
+    padding: 30px 60px;
+  }
+  .cases-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .cases-title span { color: var(--red); }
+  .case-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .case-badge {
+    background: rgba(192,57,43,0.15);
+    border: 1px solid rgba(192,57,43,0.3);
+    color: #e74c3c;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .case-text {
+    font-size: 13px;
+    color: var(--light);
+    line-height: 1.6;
+  }
+  .case-text strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PÁGINA 1 ═══════════════ -->
+<div class="page">
+  <div class="p1-header">
+    <div class="p1-tag">Infografía · Trabajo de grupo · Legislación Comercial y Tributaria</div>
+    <div class="p1-title">SIC<br><span>Colombia</span></div>
+    <div class="p1-subtitle">Superintendencia de Industria y Comercio — La entidad que regula, protege y sanciona en el mercado colombiano.</div>
+  </div>
+
+  <div class="p1-banner">
+    <div class="p1-banner-icon">🏛️</div>
+    <div>
+      <div class="p1-banner-text">Entidad del Orden Nacional · Adscrita al Ministerio de Comercio, Industria y Turismo</div>
+      <div class="p1-banner-sub">Creada mediante el Decreto 2153 de 1992 · Sede principal: Bogotá D.C.</div>
+    </div>
+  </div>
+
+  <div class="p1-cobertura">
+    <div>
+      <div class="section-label">Cobertura territorial</div>
+      <div class="big-number">100<span>%</span></div>
+      <div class="cobertura-desc">
+        La SIC actúa en <strong>todo el territorio nacional</strong> sin excepción. No hay zona del país donde sus decisiones no tengan validez. También puede actuar contra empresas <strong>extranjeras</strong> si afectan a consumidores o al mercado colombiano.
+      </div>
+    </div>
+    <div class="map-placeholder">
+      <div class="map-icon">🗺️</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);letter-spacing:1px;">32 Departamentos</div>
+      <div style="font-size:12px;color:var(--gray);margin-top:4px;">Una sola entidad, alcance total</div>
+      <div class="map-tags">
+        <span class="map-tag">Bogotá</span>
+        <span class="map-tag">Medellín</span>
+        <span class="map-tag">Cali</span>
+        <span class="map-tag">Barranquilla</span>
+        <span class="map-tag">Bucaramanga</span>
+        <span class="map-tag">+ todos los municipios</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="padding:30px 60px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center;">
+    <div>
+      <div style="font-size:36px;margin-bottom:8px;">🛡️</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:4px;">Consumidor</div>
+      <div style="font-size:11px;color:var(--gray);">Protege los derechos de quienes compran</div>
+    </div>
+    <div>
+      <div style="font-size:36px;margin-bottom:8px;">⚖️</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:4px;">Competencia</div>
+      <div style="font-size:11px;color:var(--gray);">Vigila la libre competencia en el mercado</div>
+    </div>
+    <div>
+      <div style="font-size:36px;margin-bottom:8px;">™️</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:4px;">Prop. Industrial</div>
+      <div style="font-size:11px;color:var(--gray);">Registra marcas, patentes y diseños</div>
+    </div>
+    <div>
+      <div style="font-size:36px;margin-bottom:8px;">🔐</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:4px;">Datos Personales</div>
+      <div style="font-size:11px;color:var(--gray);">Protege la privacidad de los ciudadanos</div>
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    <div class="footer-text">SIC — Superintendencia de Industria y Comercio</div>
+    <div class="footer-page">PÁGINA 01 / 04</div>
+  </div>
+</div>
+
+<!-- ═══════════════ PÁGINA 2 ═══════════════ -->
+<div class="page">
+  <div class="p2-header">
+    <div class="section-label">Alcances · Poderes sancionatorios</div>
+    <div class="p2-title">¿Qué le puede hacer la <span>SIC</span> a una empresa?</div>
+  </div>
+
+  <div class="sanctions-grid">
+    <div class="sanction-card">
+      <span class="card-icon">💰</span>
+      <div class="card-title">Multas Millonarias</div>
+      <div class="card-desc">Puede imponer multas económicas muy elevadas según la infracción cometida. En casos de libre competencia las multas son las más altas del sistema sancionatorio colombiano.</div>
+      <div class="card-amount">Hasta 100.000 SMMLV en competencia</div>
+    </div>
+
+    <div class="sanction-card red">
+      <span class="card-icon">🔒</span>
+      <div class="card-title">Cierre de Establecimientos</div>
+      <div class="card-desc">Puede ordenar el cierre temporal o definitivo de un negocio o establecimiento que esté causando daño a los consumidores o al mercado.</div>
+      <div class="card-amount red-badge">⚠️ Cierre inmediato posible</div>
+    </div>
+
+    <div class="sanction-card green">
+      <span class="card-icon">↩️</span>
+      <div class="card-title">Ordenar Reembolsos</div>
+      <div class="card-desc">Puede obligar a la empresa a devolver el dinero a los consumidores afectados. La empresa está legalmente obligada a cumplir esta orden.</div>
+      <div class="card-amount" style="background:rgba(39,174,96,0.12);border-color:rgba(39,174,96,0.3);color:#2ecc71;">Protección directa al consumidor</div>
+    </div>
+
+    <div class="sanction-card">
+      <span class="card-icon">🚫</span>
+      <div class="card-title">Prohibir Fusiones</div>
+      <div class="card-desc">Si dos empresas quieren unirse y eso perjudica la competencia del mercado, la SIC puede simplemente bloquear ese negocio, sin importar su valor económico.</div>
+      <div class="card-amount">Control previo obligatorio</div>
+    </div>
+
+    <div class="sanction-card purple">
+      <span class="card-icon">❌</span>
+      <div class="card-title">Revocar Registros</div>
+      <div class="card-desc">Puede cancelar el registro de una marca, patente o diseño industrial si se demuestra que fue otorgado incorrectamente o que hay fraude en la solicitud.</div>
+      <div class="card-amount" style="background:rgba(142,68,173,0.12);border-color:rgba(142,68,173,0.3);color:#9b59b6;">Aplica a marcas y patentes</div>
+    </div>
+
+    <div class="sanction-card red">
+      <span class="card-icon">🛑</span>
+      <div class="card-title">Ordenar el Cese</div>
+      <div class="card-desc">Puede decirle a una empresa "pare inmediatamente lo que está haciendo" — una orden de cese de conducta — y la empresa está obligada a obedecer de forma inmediata.</div>
+      <div class="card-amount red-badge">⚠️ Efecto inmediato</div>
+    </div>
+
+    <div class="sanction-card">
+      <span class="card-icon">👤</span>
+      <div class="card-title">Sancionar Directivos</div>
+      <div class="card-desc">No solo castiga a la empresa como tal, también puede sancionar directamente a los directivos, gerentes o representantes legales que sean responsables.</div>
+      <div class="card-amount">Personas naturales responsables</div>
+    </div>
+
+    <div class="sanction-card green">
+      <span class="card-icon">🔍</span>
+      <div class="card-title">Investigar de Oficio</div>
+      <div class="card-desc">No necesita esperar que alguien se queje. Si detecta algo irregular, puede iniciar una investigación por su propia cuenta sin que ningún ciudadano lo solicite.</div>
+      <div class="card-amount" style="background:rgba(39,174,96,0.12);border-color:rgba(39,174,96,0.3);color:#2ecc71;">Acción propia de la entidad</div>
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    <div class="footer-text">Poderes Sancionatorios · SIC</div>
+    <div class="footer-page">PÁGINA 02 / 04</div>
+  </div>
+</div>
+
+<!-- ═══════════════ PÁGINA 3 ═══════════════ -->
+<div class="page">
+  <div class="p3-header">
+    <div class="section-label">Alcances · Escala de sanciones y empresas afectadas</div>
+    <div class="p2-title">¿Qué tan <span>grande</span> es la sanción?</div>
+  </div>
+
+  <div class="scale-visual">
+    <div class="scale-title">⚡ ESCALA DE MULTAS POR TIPO DE INFRACCIÓN</div>
+
+    <div class="scale-item">
+      <div class="scale-label">Datos personales</div>
+      <div class="scale-bar-wrap">
+        <div class="scale-bar" style="width:35%;background:linear-gradient(90deg,#8e44ad,#9b59b6);">Hasta 2.000 SMMLV</div>
+      </div>
+    </div>
+
+    <div class="scale-item">
+      <div class="scale-label">Protección consumidor</div>
+      <div class="scale-bar-wrap">
+        <div class="scale-bar" style="width:55%;background:linear-gradient(90deg,#e8a020,#f5c842);">Hasta 150 SMMLV por infrac.</div>
+      </div>
+    </div>
+
+    <div class="scale-item">
+      <div class="scale-label">Propiedad industrial</div>
+      <div class="scale-bar-wrap">
+        <div class="scale-bar" style="width:45%;background:linear-gradient(90deg,#27ae60,#2ecc71);">Hasta 1.000 SMMLV</div>
+      </div>
+    </div>
+
+    <div class="scale-item">
+      <div class="scale-label">Libre competencia</div>
+      <div class="scale-bar-wrap">
+        <div class="scale-bar" style="width:100%;background:linear-gradient(90deg,#c0392b,#e74c3c);">Hasta 100.000 SMMLV 🔴 MAX</div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;color:var(--gray);margin-top:8px;font-family:'DM Mono',monospace;">SMMLV = Salario Mínimo Mensual Legal Vigente</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="who-section">
+    <div class="who-title">¿A qué empresas puede <span>llegar</span>?</div>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-emoji">📦</div>
+        <div class="who-name">Empresas de logística y envíos</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">✈️</div>
+        <div class="who-name">Aerolíneas y agencias de viaje</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🛒</div>
+        <div class="who-name">Supermercados y grandes superficies</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">📱</div>
+        <div class="who-name">Apps y plataformas digitales</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🏭</div>
+        <div class="who-name">Industrias y fabricantes</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🏗️</div>
+        <div class="who-name">Constructoras e inmobiliarias</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🌍</div>
+        <div class="who-name">Multinacionales extranjeras</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🏪</div>
+        <div class="who-name">Tiendas de barrio y pymes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="who-section">
+    <div class="who-title">¿A qué empresas <span style="color:var(--red);">NO</span> puede llegar?</div>
+    <div style="font-size:13px;color:var(--gray);margin-bottom:20px;font-family:'DM Mono',monospace;">Otros sectores tienen su propia Superintendencia especializada</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.25);border-left:4px solid var(--red);padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <span style="font-size:24px;">🏦</span>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--white);letter-spacing:1px;">Bancos y entidades financieras</div>
+            <div style="font-size:10px;color:var(--red);font-family:'DM Mono',monospace;">→ Superintendencia Financiera de Colombia</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--light);line-height:1.6;">El sector financiero maneja recursos del público y tiene riesgos sistémicos especiales que requieren vigilancia especializada, más allá del simple comercio.</div>
+      </div>
+
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.25);border-left:4px solid var(--red);padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <span style="font-size:24px;">🏥</span>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--white);letter-spacing:1px;">Clínicas, EPS y sector salud</div>
+            <div style="font-size:10px;color:var(--red);font-family:'DM Mono',monospace;">→ Superintendencia Nacional de Salud</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--light);line-height:1.6;">La prestación de servicios de salud implica derechos fundamentales y regulación técnica específica del sistema de salud colombiano.</div>
+      </div>
+
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.25);border-left:4px solid var(--red);padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <span style="font-size:24px;">⚡</span>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--white);letter-spacing:1px;">Empresas de servicios públicos</div>
+            <div style="font-size:10px;color:var(--red);font-family:'DM Mono',monospace;">→ Superintendencia de Servicios Públicos</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--light);line-height:1.6;">Agua, luz, gas y alcantarillado son servicios esenciales regulados por entidad propia, pues su funcionamiento afecta derechos básicos de toda la población.</div>
+      </div>
+
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.25);border-left:4px solid var(--red);padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <span style="font-size:24px;">🏢</span>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--white);letter-spacing:1px;">Conflictos societarios internos</div>
+            <div style="font-size:10px;color:var(--red);font-family:'DM Mono',monospace;">→ Superintendencia de Sociedades</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--light);line-height:1.6;">Las insolvencias, reorganizaciones y disputas entre socios son competencia de la Supersociedades, no de la SIC.</div>
+      </div>
+
+    </div>
+    <div style="margin-top:16px;background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.15);padding:14px 18px;font-size:12px;color:var(--light);line-height:1.6;">
+      💡 <strong style="color:var(--gold);">Regla general:</strong> Cuando un sector es tan sensible que requiere vigilancia técnica especializada, el Estado crea una Superintendencia propia. La SIC regula el comercio general, pero cede el paso a esas entidades en sus sectores.
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    <div class="footer-text">Escala de Sanciones · SIC</div>
+    <div class="footer-page">PÁGINA 03 / 04</div>
+  </div>
+</div>
+
+<!-- ═══════════════ PÁGINA 4 ═══════════════ -->
+<div class="page">
+  <div class="p4-flow" style="padding-bottom:20px;">
+    <div class="section-label">Proceso · ¿Cómo actúa la SIC?</div>
+    <div class="flow-title">El camino de una <span>investigación</span></div>
+    <div class="flow-sub">Así funciona el proceso desde que detecta una irregularidad hasta que sanciona</div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-head">🔍 Detección de la irregularidad</div>
+          <div class="step-body">La SIC puede actuar por queja de un ciudadano o consumidor, <strong>o de oficio</strong> (por su propia iniciativa). No depende de nadie para empezar a investigar.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-head">📋 Apertura de investigación formal</div>
+          <div class="step-body">Se notifica a la empresa investigada y se le da la oportunidad de presentar sus argumentos. La empresa tiene derecho al debido proceso.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-head">🔎 Recolección de pruebas</div>
+          <div class="step-body">La SIC puede solicitar documentos, realizar visitas de inspección, interrogar directivos y revisar bases de datos de la empresa investigada.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-head">⚖️ Evaluación y decisión</div>
+          <div class="step-body">Con base en las pruebas recogidas, la SIC evalúa si hubo infracción y decide si sanciona, archiva el caso o impone medidas correctivas.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-head">🔨 Sanción e imposición de medidas</div>
+          <div class="step-body">Si hay infracción, impone la sanción correspondiente: multa, cierre, cese de actividad, reembolsos, o la combinación que aplique al caso.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="cases-section">
+    <div class="cases-title">Casos <span>reales</span> de la SIC en acción</div>
+    <div class="case-item">
+      <div class="case-badge">AEROLÍNEAS</div>
+      <div class="case-text"><strong>Investigaciones a aerolíneas por cobros indebidos</strong>La SIC ha sancionado aerolíneas por no respetar las políticas de reembolso y por publicidad engañosa en precios de tiquetes.</div>
+    </div>
+    <div class="case-item">
+      <div class="case-badge">TECNOLOGÍA</div>
+      <div class="case-text"><strong>Investigaciones por manejo de datos personales</strong>Ha abierto investigaciones a plataformas digitales y empresas de telecomunicaciones por no cumplir con la Ley de Protección de Datos (1581 de 2012).</div>
+    </div>
+    <div class="case-item">
+      <div class="case-badge">FUSIONES</div>
+      <div class="case-text"><strong>Control de fusiones empresariales</strong>Ha bloqueado o condicionado fusiones entre grandes grupos económicos para evitar la concentración de mercado y proteger la libre competencia.</div>
+    </div>
+    <div class="case-item" style="border-bottom:none;">
+      <div class="case-badge">CARTELES</div>
+      <div class="case-text"><strong>Desmantelamiento de carteles de precios</strong>Ha investigado y sancionado empresas de distintos sectores por acordar precios entre competidores, lo cual está prohibido por la ley.</div>
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    <div class="footer-text">SIC · Superintendencia de Industria y Comercio · Colombia</div>
+    <div class="footer-page">PÁGINA 04 / 04</div>
+  </div>
+</div>
+
+</body>
+</html>
